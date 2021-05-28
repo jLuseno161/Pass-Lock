@@ -26,3 +26,11 @@ class User:
                 return True
 
         return False
+    # @classmethod
+    # def findbyname(cls):
+
+    @classmethod
+    def findbyname(cls,  username, password):
+        for user in cls.user_list:
+            if user.username == username and user.password == password:
+                return user
