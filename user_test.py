@@ -31,8 +31,9 @@ class LoginTest(unittest.TestCase):
         """
             test if new user has been saved to the new user_list
         """
-        self.new_user.save_user()
-        self.assertEqual(User.user_list, 1)
+        self.new_user.save_user()  # add user to list
+        self.assertEqual(len(User.user_list), 1)  # check length of list
+
 
 if __name__ == '__main__':
     unittest.main()
