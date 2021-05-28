@@ -16,3 +16,4 @@ class LoginTest(unittest.TestCase):
             setUp() method allows us to define instructions that will 
             be executed before each test method
         """
+        self.new_user = User("jLuseno161","joy161")
