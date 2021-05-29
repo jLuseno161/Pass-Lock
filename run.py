@@ -69,13 +69,24 @@ def check_existing_account(account_name):
     '''
     return Credential.account_exist(account_name)
 
+
 def delete_account(credential):
     '''
     Function to delete a account
     '''
     credential.delete_account()
 
+
+def display_account():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return Credential.display_account()
+
     # MAIN FUNCTION
+
+
+# def get_account():
 
 
 def main():
@@ -101,6 +112,7 @@ def main():
 
     print(f"Hello {username}, Thank you for creating an account with us.")
     print('\n')
+
     print("Proceed to Login")
     print('\n')
 
@@ -119,6 +131,9 @@ def main():
     else:
         print("That contact does not exist")
 
+    print('\n')
+
+   
 
 if __name__ == '__main__':
 
