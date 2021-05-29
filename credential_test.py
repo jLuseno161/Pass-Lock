@@ -66,9 +66,10 @@ class CredentialTest(unittest.TestCase):
 
         self.assertEqual(found_account.username, test_account.username)
 
+# Test 5 : Delete account
     def test_delete_account(self):
         '''
-        test_delete_contact to test if we can remove a contact from our contact list
+        test_delete_account to test if we can remove an account from our contact list
         '''
         self.new_account.save_account()
         test_account = Credential(
@@ -78,17 +79,14 @@ class CredentialTest(unittest.TestCase):
         self.new_account.delete_account()  # Deleting a account object
         self.assertEqual(len(Credential.credential_list), 1)
 
-
-if __name__ == '__main__':
-    unittest.main()
-
-# # test 3 - if object actually exists
-#     def test_account_exits(self):
-#         self.new_account.save_account()
-#         check_account = Credential("Instagram","jLuseno161", "joy161")
-#         check_account.save_account()
-#         account_exists = Credential.account_exist("Instagram","jLuseno161", "joy161")
-#         self.assertTrue(account_exists)
+# Test 6: check if object actually exists
+    def test_account_exits(self):
+        self.new_account.save_account()
+        check_account = Credential("Instagram", "jLuseno161", "joy161")
+        check_account.save_account()
+        account_exists = Credential.account_exist(
+            "Instagram", "jLuseno161", "joy161")
+        self.assertTrue(account_exists)
 
 
 if __name__ == '__main__':
