@@ -8,7 +8,7 @@
 
 ## Description
 
-A simple python program which runs on the terminal. The app,  stores user's account credentials for multiple platforms and also generates passwords for a user's new or existing accounts using the inbuilt random and string libraries.
+A simple python program which runs on the terminal. The app, stores user's account credentials for multiple platforms and also generates passwords for a user's new or existing accounts using the inbuilt random and string libraries.
 
 ## Technologies Used
 
@@ -63,11 +63,16 @@ Here is a run through of how to set up the application:
 * No known bugs
 Be sure to report more bugs by contacting me.
 
-## Support and contact details
+##  contact details
 
-You can provide feedback or raise any issues/ bugs through the following means:
-* joyluseno0@gmail.com
+## Support and Further contact details
+
+* You can provide feedback or raise any issues/ bugs through the following means:
+ joyluseno0@gmail.com
+* To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## License
 
-#### [*MIT License*](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+Copyright © 2021  [JOY L. KOLIA](https://github.com/jLuseno161)
