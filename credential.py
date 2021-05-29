@@ -5,7 +5,7 @@ class Credential:
 
     credential_list = []
 
-    def __init__(self,account_name, username, password):
+    def __init__(self, account_name, username, password):
         self.account_name = account_name
         self.username = username
         self.password = password
@@ -13,5 +13,8 @@ class Credential:
     def save_account(self):
         Credential.credential_list.append(self)
 
-    
-     
+    @classmethod
+    def findbyname(cls,account_name,  username, password):
+        for account in cls.credential_list:
+            if account.account_name == account_name:
+                return account
