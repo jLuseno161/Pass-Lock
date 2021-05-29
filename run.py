@@ -161,19 +161,19 @@ def main():
             print('\n')
 
         elif short_code == 'da':
-            # if display_account():
-            #     print("Here is a list of all your accounts")
-            #     print('\n')
+            if display_account():
+                print("Here is a list of all your accounts")
+                print('\n')
 
-            #     for credential in display_account():
-            #         print(
-            #             f"{credential.account_name}     {credential.username} .....{credential.password}")
+                for credential in display_account():
+                    print(
+                        f"{credential.account_name}     {credential.username} .....{credential.password}")
 
-            #     print('\n')
-            # else:
-            #     print('\n')
-            #     print("You dont seem to have any accounts saved yet")
-            #     print('\n')
+                print('\n')
+            else:
+                print('\n')
+                print("You dont seem to have any accounts saved yet")
+                print('\n')
 
         elif short_code == 'fa':
             print("Hey fc")

@@ -88,6 +88,16 @@ class CredentialTest(unittest.TestCase):
             "Instagram", "jLuseno161", "joy161")
         self.assertTrue(account_exists)
 
+# Test 7: display account details
+
+
+def test_display_all_accounts(self):
+    '''
+    method that returns a list of all accounts saved
+    '''
+
+    self.assertEqual(Credential.display_account(), Credential.credential_list)
+
 
 if __name__ == '__main__':
     unittest.main()

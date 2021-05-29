@@ -25,7 +25,7 @@ class Credential:
 
     #     return False
     @classmethod
-    def account_exist(cls, account_name,username, password):
+    def account_exist(cls, account_name, username, password):
         '''
          Method that checks if a account exists from the credentials list.
         Args:
@@ -50,3 +50,10 @@ class Credential:
         delete_account method deletes a saved account credentials from the credential_list
         '''
         Credential.credential_list.remove(self)
+
+    @classmethod
+    def display_account(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credential_list
