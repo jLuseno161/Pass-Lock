@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.8
 from user import User
 from credential import Credential
-from generatepass import *
+import random
+import string
 import os
 os.system("clear")
 
@@ -90,22 +91,22 @@ def display_account():
 # def get_account():
 
 
+def response_none(question):
+    """Users response on whether to generate password or not"""
+    response = None
+    while response not in ("y", "n"):
+        response = input(question).lower()
+    return response
+
+
 def main():
     print(f"Welcome to Pass Lock,helping you save and remember your passwords is our priority.")
-    print('\n')
     print("Please create Account:")
     print('\n')
     print("Enter your new username")
     username = input()
-    print('\n')
     print("Enter your new password")
     password = input()
-
-    # if username == "" or password == "":
-    #     refresh()
-    #     print("please Enter correct ")
-    #     username = input()
-    # else:
     save_user(create_user(username, password))
     print('\n')
 
@@ -127,85 +128,101 @@ def main():
         fetch_user = find_user(user_name, pass_word)
         print(f"{fetch_user.username} {fetch_user.password}")
 
+        while True:
+            print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
+            # if username == username:
+            #     print("")
+
+            short_code = input().lower()
+
+            if short_code == 'ca':
+                print("New Credential Account")
+                print("-"*10)
+
+                print("Account Name ....")
+                account_name = input()
+
+                print("Username ...")
+                username = input()
+
+                """Determine if generate or not"""
+                generate = response_none(
+                    "Would you like us to generate a password for you? (y/n): ")
+                if generate == "y":
+                    value = 16
+                    lower = string.ascii_lowercase
+                    upper = string.ascii_uppercase
+                    num = string.digits
+                    all = lower + upper + num
+                    temp = random.sample(all, value)
+                    password = "".join(temp)
+
+                else:
+
+                    print("Password ...")
+                    password = input()
+
+                # create and save new contact.
+                save_account(create_account(account_name, username, password))
+                print('\n')
+                print(
+                    f"New account: {account_name}  with user name : {username} created :{password}")
+                print('\n')
+
+            elif short_code == 'da':
+                if display_account():
+                    print("Here is a list of all your accounts")
+                    print('\n')
+
+                    for credential in display_account():
+                        print(
+                            f"{credential.account_name} |   {credential.username} |   {credential.password}")
+
+                else:
+                    print('\n')
+                    print("You dont seem to have any accounts saved yet")
+                print('\n')
+
+            elif short_code == 'fa':
+                print("Enter the account name you want to search for")
+
+                search_account = input()
+                if check_existing_account(search_account):
+                    check_account = find_account(search_account)
+                    print(f"{check_account.account_name}")
+                    print('-' * 20)
+
+                    print(f"Account Name.......{check_account.account_name}")
+                    print(f"Username.......{check_account.username}")
+                else:
+                    print("That account does not exist")
+                print('\n')
+
+            elif short_code == 'dl':
+                print("Enter name of account to delete")
+                search_account = input()
+                if check_existing_account(search_account):
+                    print("Please wait ...")
+                    check_account = find_account(search_account)
+                    delete_account(check_account)
+                    print(
+                        f"Account {check_account.account_name}deleted successfully")
+                else:
+                    print('\n')
+                    print("You dont seem to have any accounts saved yet")
+
+            elif short_code == "ex":
+                print("Bye .......")
+                break
+            else:
+                print("I really didn't get that. Please use the short codes")
     else:
-        print("That contact does not exist")
+        print("That account does not exist. Please create one")
+        print('\n')
+
+        main()
 
     print('\n')
-
-    while True:
-        print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
-        # if username == username:
-        #     print("")
-
-        short_code = input().lower()
-
-        if short_code == 'ca':
-            print("New Credential Account")
-            print("-"*10)
-
-            print("Account Name ....")
-            account_name = input()
-
-            print("Username ...")
-            username = input()
-
-            print("Password ...")
-            password = input()
-
-            # create and save new contact.
-            save_account(create_account(account_name, username, password))
-            print('\n')
-            print(
-                f"New account: {account_name}  with user name : {username} created")
-            print('\n')
-
-        elif short_code == 'da':
-            if display_account():
-                print("Here is a list of all your accounts")
-                print('\n')
-
-                for credential in display_account():
-                    print(
-                        f"{credential.account_name} |   {credential.username} |   {credential.password}")
-
-            else:
-                print('\n')
-                print("You dont seem to have any accounts saved yet")
-            print('\n')
-
-        elif short_code == 'fa':
-            print("Enter the account name you want to search for")
-
-            search_account = input()
-            if check_existing_account(search_account):
-                check_account = find_account(search_account)
-                print(f"{check_account.account_name}")
-                print('-' * 20)
-
-                print(f"Account Name.......{check_account.account_name}")
-                print(f"Username.......{check_account.username}")
-            else:
-                print("That account does not exist")
-            print('\n')
-
-        elif short_code == 'dl':
-            print("Enter name of account to delete")
-            search_account = input()
-            if check_existing_account(search_account):
-                print("Please wait ...")
-                check_account = find_account(search_account)
-                delete_account(check_account)
-                print(
-                    f"Account {check_account.account_name}deleted successfully")
-            else:
-                print('\n')
-                print("You dont seem to have any accounts saved yet")
-
-        elif short_code == "ex":
-            print("Bye .......")
-            break
-        else:
-            print("I really didn't get that. Please use the short codes")
 
 
 if __name__ == '__main__':
