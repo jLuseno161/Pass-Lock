@@ -162,7 +162,7 @@ def main():
                     print("Password ...")
                     password = input()
 
-                # create and save new contact.
+                # create and save new credential.
                 save_account(create_account(account_name, username, password))
                 print('\n')
                 print(

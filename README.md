@@ -22,8 +22,6 @@ A simple python program which runs on the terminal. The app, stores user's accou
 ## Requirements
 
 * This program requires python3.+ (and pip) installed, a guide on how to install python on various platforms can be found [here](https://www.python.org/)
-* Once python is installed, install the folowing external libraries using pip:
-    - **`pip3 install unittest`**
 
 ## Setup/Installation
 
@@ -62,8 +60,6 @@ Here is a run through of how to set up the application:
 
 * No known bugs
 Be sure to report more bugs by contacting me.
-
-##  contact details
 
 ## Support and Further contact details
 

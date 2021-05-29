@@ -19,7 +19,7 @@ class User:
         Args:
             string: username to search if it exists
         Returns :
-            Boolean: True or false depending if the contact exists
+            Boolean: True or false depending if the account exists
         '''
         for user in cls.user_list:
             if user.username == username and user.password == password:

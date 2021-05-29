@@ -44,7 +44,7 @@ class CredentialTest(unittest.TestCase):
     def test_save_multiple_account(self):
         '''
         test_save_multiple_accounts to check if we can save multiple account credential
-        objects to our contact_list
+        objects to our credentials_list
         '''
         self.new_account.save_account()
         test_account = Credential(
@@ -69,7 +69,7 @@ class CredentialTest(unittest.TestCase):
 # Test 5 : Delete account
     def test_delete_account(self):
         '''
-        test_delete_account to test if we can remove an account from our contact list
+        test_delete_account to test if we can remove an account from our account list
         '''
         self.new_account.save_account()
         test_account = Credential(
