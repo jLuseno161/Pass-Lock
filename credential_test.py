@@ -52,6 +52,21 @@ class CredentialTest(unittest.TestCase):
         test_account.save_account()
         self.assertEqual(len(Credential.credential_list), 2)
 
+# Test 4 : fetch credentials
+    def test_find_account_by_name(self):
+        '''
+        test to check if we can find a account by account name and display information
+        '''
+
+        self.new_account.save_account()
+        test_account = Credential(
+            "Instagram", "jLuseno161", "joy161")  # new account
+        test_account.save_account()
+
+        found_account = Credential.findbyname("Instagram")
+
+        self.assertEqual(found_account.username, test_account.username)
+
 
 if __name__ == '__main__':
     unittest.main()
