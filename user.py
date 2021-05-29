@@ -26,8 +26,6 @@ class User:
                 return True
 
         return False
-    # @classmethod
-    # def findbyname(cls):
 
     @classmethod
     def findbyname(cls,  username, password):

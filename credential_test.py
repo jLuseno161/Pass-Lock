@@ -62,7 +62,7 @@ class CredentialTest(unittest.TestCase):
             "Instagram", "jLuseno161", "joy161")  # new account
         test_account.save_account()
 
-        found_account = Credential.findbyname("Instagram")
+        found_account = Credential.findby_account_name("Instagram")
 
         self.assertEqual(found_account.username, test_account.username)
 

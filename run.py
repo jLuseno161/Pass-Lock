@@ -61,7 +61,7 @@ def find_account(account_name):
     '''
     Function that finds a account by account_name and returns the account
     '''
-    return User.findbyname(account_name)
+    return Credential.findby_account_name(account_name)
 
 
 def check_existing_account(account_name):
@@ -133,14 +133,13 @@ def main():
     print('\n')
 
     while True:
-        print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account, ex -exit the account list ")
+        print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
         # if username == username:
         #     print("")
 
         short_code = input().lower()
 
         if short_code == 'ca':
-            print("hey joy")
             print("New Credential Account")
             print("-"*10)
 
@@ -167,29 +166,40 @@ def main():
 
                 for credential in display_account():
                     print(
-                        f"{credential.account_name}     {credential.username} .....{credential.password}")
+                        f"{credential.account_name} |   {credential.username} |   {credential.password}")
 
-                print('\n')
             else:
                 print('\n')
                 print("You dont seem to have any accounts saved yet")
-                print('\n')
+            print('\n')
 
         elif short_code == 'fa':
-            print("Hey fc")
+            print("Enter the account name you want to search for")
 
-            # print("Enter the number you want to search for")
+            search_account = input()
+            if check_existing_account(search_account):
+                check_account = find_account(search_account)
+                print(f"{check_account.account_name}")
+                print('-' * 20)
 
-            # search_number = input()
-            # if check_existing_contacts(search_number):
-            #         search_contact = find_contact(search_number)
-            #         print(f"{search_contact.first_name} {search_contact.last_name}")
-            #         print('-' * 20)
+                print(f"Account Name.......{check_account.account_name}")
+                print(f"Username.......{check_account.username}")
+            else:
+                print("That account does not exist")
+            print('\n')
 
-            #         print(f"Phone number.......{search_contact.phone_number}")
-            #         print(f"Email address.......{search_contact.email}")
-            # else:
-            #         print("That contact does not exist")
+        elif short_code == 'dl':
+            print("Enter name of account to delete")
+            search_account = input()
+            if check_existing_account(search_account):
+                print("Please wait ...")
+                check_account = find_account(search_account)
+                delete_account(check_account)
+                print(
+                    f"Account {check_account.account_name}deleted successfully")
+            else:
+                print('\n')
+                print("You dont seem to have any accounts saved yet")
 
         elif short_code == "ex":
             print("Bye .......")

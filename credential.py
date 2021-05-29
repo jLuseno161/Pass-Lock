@@ -25,7 +25,7 @@ class Credential:
 
     #     return False
     @classmethod
-    def account_exist(cls, account_name, username, password):
+    def account_exist(cls, account_name):
         '''
          Method that checks if a account exists from the credentials list.
         Args:
@@ -40,7 +40,7 @@ class Credential:
         return False
 
     @classmethod
-    def findbyname(cls, account_name):
+    def findby_account_name(cls, account_name):
         for account in cls.credential_list:
             if account.account_name == account_name:
                 return account
