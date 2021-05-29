@@ -47,12 +47,12 @@ def main():
     print('\n')
     print("Enter your new password")
     password = input()
-
-    if username == "" or password == "":
-        print("please Enter your new username")
-        username = input()
-    
-    save_user(create_user(username, password))
+    # if username == "" or password == "":
+    #     refresh()
+    #     print("please Enter correct ")
+    #     username = input()
+    # else:
+    #     save_user(create_user(username, password))
     print('\n')
 
     refresh()
