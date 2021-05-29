@@ -16,4 +16,10 @@ class CredentialTest(unittest.TestCase):
         """
         self.new_account = Credential("Instagram", "jLuseno161", "joy161")
 
- 
+    def test_init(self):
+        """
+            test to check for correct instantion of objects
+        """
+        self.assertEqual(self.new_account.account_name, "Instagram")
+        self.assertEqual(self.new_account.username, "jLuseno161")
+        self.assertEqual(self.new_account.password, "joy161")
