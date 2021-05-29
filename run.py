@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
-
 from user import User
+import os
+os.system("clear")
 
 
 def create_user(username, password):
@@ -32,25 +33,42 @@ def check_existing_user(username, password):
     return User.user_exist(username, password)
 
 
-def main():
-    print(f"Welcome to Pass Lock, where helping you save and remember your passwords is our priority. \n Please create Account:")
-    print("Enter your username")
-    username = input()
+def refresh():
+    os.system("clear")
 
-    print("Enter your password")
+
+def main():
+    print(f"Welcome to Pass Lock,helping you save and remember your passwords is our priority.")
+    print('\n')
+    print("Please create Account:")
+    print('\n')
+    print("Enter your new username")
+    username = input()
+    print('\n')
+    print("Enter your new password")
     password = input()
 
+    if username == "" or password == "":
+        print("please Enter your new username")
+        username = input()
+    
     save_user(create_user(username, password))
     print('\n')
+
+    refresh()
+
     print(f"Hello {username}, Thank you for creating an account with us.")
     print('\n')
-    print("Please Login in to continue")
+    print("Proceed to Login")
+    print('\n')
 
-    print("Enter your username")
+    print("Enter your username:")
     user_name = input()
+    print('\n')
 
-    print("Enter your username")
+    print("Enter your password:")
     pass_word = input()
+    print('\n')
 
     if check_existing_user(user_name, pass_word):
         fetch_user = find_user(user_name, pass_word)
