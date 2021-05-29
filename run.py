@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
 from user import User
 from credential import Credential
+from generatepass import *
 import os
 os.system("clear")
 
@@ -53,7 +54,7 @@ def save_account(credential):
     '''
     Function to save new user
     '''
-    credential.save_user()
+    credential.save_account()
 
 
 def find_account(account_name):
@@ -111,14 +112,12 @@ def main():
     refresh()
 
     print(f"Hello {username}, Thank you for creating an account with us.")
-    print('\n')
 
     print("Proceed to Login")
     print('\n')
 
     print("Enter your username:")
     user_name = input()
-    print('\n')
 
     print("Enter your password:")
     pass_word = input()
@@ -133,7 +132,71 @@ def main():
 
     print('\n')
 
-   
+    while True:
+        print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account, ex -exit the account list ")
+        # if username == username:
+        #     print("")
+
+        short_code = input().lower()
+
+        if short_code == 'ca':
+            print("hey joy")
+            print("New Credential Account")
+            print("-"*10)
+
+            print("Account Name ....")
+            account_name = input()
+
+            print("Username ...")
+            username = input()
+
+            print("Password ...")
+            password = input()
+
+            # create and save new contact.
+            save_account(create_account(account_name, username, password))
+            print('\n')
+            print(
+                f"New account: {account_name}  with user name : {username} created")
+            print('\n')
+
+        elif short_code == 'da':
+            # if display_account():
+            #     print("Here is a list of all your accounts")
+            #     print('\n')
+
+            #     for credential in display_account():
+            #         print(
+            #             f"{credential.account_name}     {credential.username} .....{credential.password}")
+
+            #     print('\n')
+            # else:
+            #     print('\n')
+            #     print("You dont seem to have any accounts saved yet")
+            #     print('\n')
+
+        elif short_code == 'fa':
+            print("Hey fc")
+
+            # print("Enter the number you want to search for")
+
+            # search_number = input()
+            # if check_existing_contacts(search_number):
+            #         search_contact = find_contact(search_number)
+            #         print(f"{search_contact.first_name} {search_contact.last_name}")
+            #         print('-' * 20)
+
+            #         print(f"Phone number.......{search_contact.phone_number}")
+            #         print(f"Email address.......{search_contact.email}")
+            # else:
+            #         print("That contact does not exist")
+
+        elif short_code == "ex":
+            print("Bye .......")
+            break
+        else:
+            print("I really didn't get that. Please use the short codes")
+
 
 if __name__ == '__main__':
 
