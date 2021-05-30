@@ -62,7 +62,6 @@ Be sure to report more bugs by contacting me.
 
 * You can provide feedback or raise any issues/ bugs through the following means:
  joyluseno0@gmail.com
-* To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## License
 
