@@ -103,6 +103,7 @@ def main():
     print(f"Welcome to Pass Lock,helping you save and remember your passwords is our priority.")
     print("Please create Account:")
     print('\n')
+
     print("Enter your new username")
     username = input()
     print("Enter your new password")
@@ -126,10 +127,10 @@ def main():
 
     if check_existing_user(user_name, pass_word):
         fetch_user = find_user(user_name, pass_word)
-        print(f"{fetch_user.username} {fetch_user.password}")
+        # print(f"{fetch_user.username} {fetch_user.password}")
 
         while True:
-            print("Use these short codes : ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
+            print("Use these short codes :log ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
             # if username == username:
             #     print("")
 
