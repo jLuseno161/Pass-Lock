@@ -1,7 +1,5 @@
 # Pass Lock
 
-####  A Python program which stores and secures your passwords as well as generates new strong user passwords.
-
 ## Author
 
 [**Joy Kolia**](https://github.com/jLuseno161)
