@@ -53,7 +53,7 @@ def create_account(account_name, username, password):
 
 def save_account(credential):
     '''
-    Function to save new user
+    Function to save new account credentials.
     '''
     credential.save_account()
 
@@ -100,7 +100,12 @@ def response_none(question):
 
 
 def main():
+    print("****************")
+    print('\n')
     print(f"Welcome to Pass Lock,helping you save and remember your passwords is our priority.")
+    print('\n')
+    print("****************")
+    print('\n')
     print("Please create Account:")
     print('\n')
 
@@ -110,10 +115,13 @@ def main():
     password = input()
     save_user(create_user(username, password))
     print('\n')
-
     refresh()
 
+    print("****************")
+    print('\n')
     print(f"Hello {username}, Thank you for creating an account with us.")
+    print('\n')
+    print("****************")
 
     print("Proceed to Login")
     print('\n')
@@ -130,10 +138,15 @@ def main():
         # print(f"{fetch_user.username} {fetch_user.password}")
 
         while True:
+            print('\n')
+            print("****************")
+            print('\n')
             print("Use these short codes :log ca - create a new account credential, da - display account, fa -find an account,dl - delete account, ex -exit the account list ")
+            print('\n')
+            print("****************")
+            print('\n')
             # if username == username:
             #     print("")
-
             short_code = input().lower()
 
             if short_code == 'ca':
@@ -218,6 +231,7 @@ def main():
             else:
                 print("I really didn't get that. Please use the short codes")
     else:
+        refresh()
         print("That account does not exist. Please create one")
         print('\n')
 

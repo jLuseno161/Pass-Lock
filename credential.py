@@ -6,24 +6,15 @@ class Credential:
     credential_list = []
 
     def __init__(self, account_name, username, password):
+        """Constructor for objects credential"""
         self.account_name = account_name
         self.username = username
         self.password = password
 
     def save_account(self):
+        """Method to append new account the list"""
         Credential.credential_list.append(self)
 
-    # def account_exist(cls, account_name,username, password):
-    #     '''
-
-    #     # for user in cls.user_list:
-    #     #     if user.username == username and user.password == password:
-    #     #         return True
-    #     for account in cls.credential_list:
-    #         if account.account_name == account_name:
-    #             return True
-
-    #     return False
     @classmethod
     def account_exist(cls, account_name):
         '''
@@ -41,6 +32,9 @@ class Credential:
 
     @classmethod
     def findby_account_name(cls, account_name):
+        """
+        method to search account by account name
+        """
         for account in cls.credential_list:
             if account.account_name == account_name:
                 return account

@@ -11,7 +11,7 @@ class CredentialTest(unittest.TestCase):
 
     def setUp(self):
         """
-            method that allows us to define instructions that will 
+            method that allows us to define instructions that will
             be executed before each test method
         """
         self.new_account = Credential("Instagram", "jLuseno161", "joy161")
@@ -81,6 +81,9 @@ class CredentialTest(unittest.TestCase):
 
 # Test 6: check if object actually exists
     def test_account_exits(self):
+        '''
+        method to checks if account exists
+        '''
         self.new_account.save_account()
         check_account = Credential("Instagram", "jLuseno161", "joy161")
         check_account.save_account()

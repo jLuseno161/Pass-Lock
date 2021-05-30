@@ -10,6 +10,7 @@ class User:
         self.password = password
 
     def save_user(self):
+        """ append new user to list"""
         User.user_list.append(self)
 
     @classmethod
@@ -29,6 +30,7 @@ class User:
 
     @classmethod
     def findbyname(cls,  username, password):
+        """ Method to find user by searching their name"""
         for user in cls.user_list:
             if user.username == username and user.password == password:
                 return user

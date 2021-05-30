@@ -34,13 +34,15 @@ class LoginTest(unittest.TestCase):
         self.new_user.save_user()  # add user to list
         self.assertEqual(len(User.user_list), 1)  # check length of list
 
-#test 3 - if object actually exists
+# test 3 - if object actually exists
     def test_user_exits(self):
+        """ method to check if user exists in the users list"""
         self.new_user.save_user()
-        check_user = User("jLuseno161","joy161")
+        check_user = User("jLuseno161", "joy161")
         check_user.save_user()
-        user_exists = User.user_exist("jLuseno161","joy161")
+        user_exists = User.user_exist("jLuseno161", "joy161")
         self.assertTrue(user_exists)
+
 
 if __name__ == '__main__':
     unittest.main()
